@@ -1,0 +1,5 @@
+export access_token=$(curl --insecure -X POST https://keycloak-sso.apps.cluster-b48e.b48e.sandbox936.opentlc.com/auth/realms/master/protocol/openid-connect/token --user broker:e140a89b-2164-4034-b6bd-cce25ab0ede9 -H 'content-type: application/x-www-form-urlencoded' -d 'username=ger&password=Chester99&grant_type=password' | jq --raw-output '.access_token')
+
+curl -v -X GET http://localhost:8080/api/users/me -H "Authorization: Bearer "$access_token
+
+https://www.youtube.com/watch?v=gO5CJpmj3ys&t=546s
